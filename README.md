@@ -6,8 +6,15 @@ This single-basin hydrologic modeling application for the Clear Creek at Golden,
 
 ## Description
 The major components included in the repo are the following:
- * TBA
- * TBA
+ * NextGen realization file for a CFE model
+ * GIS data: HydroFabric
+ *   NextGen HydroFabric data: https://www.lynker-spatial.com/#v20/
+ *   Subsetting tool: https://github.com/NOAA-OWP/hydrofabric/tree/main
+ * Forcings: from the real-time operational NWM Analysis and Assimilation Extended dataset mapped to the Clear Creek hydrofabric
+ *   NWM operational forcing data: https://noaa-nwm-pds.s3.amazonaws.com/index.html
+ *   NWM to NextGen forcing processor tool: https://github.com/CIROH-UA/ngen-datastream/tree/main/forcingprocessor
+ * Initialization files
+ * Streamflow observations
 
 ## Contributors
  * Josh Sturtevant, CSM, Lynker

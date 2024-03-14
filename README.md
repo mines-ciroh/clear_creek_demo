@@ -17,7 +17,7 @@ The major components included in the repo are the following:
  * Streamflow observations
 
 ## Example run command:
-/beegfs/projects/hydrofcst/SHARP/models/ngen/cmake_build/ngen /beegfs/projects/hydrofcst/SHARP/sharp_data/gis/clear_ck/clear_ck.v20.catchment_data.geojson all /beegfs/projects/hydrofcst/SHARP/sharp_data/gis/clear_ck/clear_ck.v20.nexus_data.geojson all /beegfs/projects/hydrofcst/SHARP/sharp_data/tmpdir/realization_file.clear_ck.cfe.json
+<path_to_ngen_exe> <path_to_catchment_data> all <path_to_nexus_data> all <path_to_realization_file>
 
 ## Contributors
  * Josh Sturtevant, CSM, Lynker

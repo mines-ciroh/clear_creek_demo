@@ -1,0 +1,89 @@
+{
+    "global": {
+        "formulations": [
+            {
+                "name": "bmi_multi",
+                "params": {
+                    "model_type_name": "bmi_multi_pet_cfe",
+                    "forcing_file": "",
+                    "init_config": "",
+                    "allow_exceed_end_time": true,
+                    "main_output_variable": "Q_OUT",
+                    "modules": [
+                        {
+                            "name": "bmi_c++",
+                            "params": {
+                                "model_type_name": "bmi_c++_sloth",
+                                "library_file": "/beegfs/projects/hydrofcst/SHARP/models/ngen/extern/sloth/cmake_build/libslothmodel.so",
+                                "init_config": "/dev/null",
+                                "allow_exceed_end_time": true,
+                                "main_output_variable": "z",
+                                "uses_forcing_file": false,
+                                "model_params": {
+                                    "sloth_ice_fraction_schaake(1,double,m,node)": 0.0,
+                                    "sloth_ice_fraction_xinanjiang(1,double,1,node)": 0.0,
+                                    "sloth_soil_moisture_profile(1,double,1,node)": 0.0,
+                                    "sloth_pressure(1,double,1,node)": 101030.0
+                                }
+                            }
+                        },
+                       {
+                            "name": "bmi_c",
+                            "params": {
+                                "model_type_name": "bmi_c_pet",
+                                "library_file": "/beegfs/projects/hydrofcst/SHARP/models/ngen/extern/evapotranspiration/cmake_build/libpetbmi",
+                                "forcing_file": "",
+                                "init_config": "./inputs/settings/06719505/pet/pet_bmi_config.{{id}}.ini",
+                                "allow_exceed_end_time": true,
+                                "main_output_variable": "water_potential_evaporation_flux",
+                                "registration_function": "register_bmi_pet",
+                                "uses_forcing_file": false,
+                                "variables_names_map": {
+                                    "water_potential_evaporation_flux": "potential_evapotranspiration"
+                                }
+                            }
+                        },
+                       {
+                            "name": "bmi_c",
+                            "params": {
+                                "model_type_name": "bmi_c_cfe",
+                                "library_file": "/beegfs/projects/hydrofcst/SHARP/models/ngen/extern/cfe/cmake_build/libcfebmi",
+                                "forcing_file": "",
+                                "init_config": "./inputs/settings/06719505/cfe/cfe_bmi_config.{{id}}.ini",
+                                "allow_exceed_end_time": true,
+                                "main_output_variable": "Q_OUT",
+                                "registration_function": "register_bmi_cfe",
+                                "uses_forcing_file": true,
+                                "variables_names_map": {
+                                    "water_potential_evaporation_flux": "potential_evapotranspiration",
+                                    "atmosphere_air_water~vapor__relative_saturation": "SPFH_2maboveground",
+                                    "land_surface_air__temperature": "TMP_2maboveground",
+                                    "land_surface_wind__x_component_of_velocity": "UGRD_10maboveground",
+                                    "land_surface_wind__y_component_of_velocity": "VGRD_10maboveground",
+                                    "land_surface_radiation~incoming~longwave__energy_flux": "DLWRF_surface",
+                                    "land_surface_radiation~incoming~shortwave__energy_flux": "DSWRF_surface",
+                                    "land_surface_air__pressure": "PRES_surface",
+                                    "ice_fraction_schaake" : "sloth_ice_fraction_schaake",
+                                    "ice_fraction_xinanjiang" : "sloth_ice_fraction_xinanjiang",
+                                    "soil_moisture_profile" : "sloth_soil_moisture_profile"
+                                }
+                            }
+                        }
+                    ],
+                    "uses_forcing_file": true
+                }
+            }
+        ],
+        "forcing": {
+            "file_pattern": ".*{{id}}.*.csv",
+            "path": "./forcings/06719505/NWM_AnA/",
+            "provider": "CsvPerFeature"
+        }
+    },
+    "time": {
+        "start_time": "2023-12-27 13:00:00",
+        "end_time": "2024-03-13 16:00:00",
+        "output_interval": 3600
+    },
+    "output_root": "./outputs/06719505/cfe_AnA_run/"
+}

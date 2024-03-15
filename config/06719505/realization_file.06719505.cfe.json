@@ -33,7 +33,7 @@
                                 "model_type_name": "bmi_c_pet",
                                 "library_file": "/beegfs/projects/hydrofcst/SHARP/models/ngen/extern/evapotranspiration/cmake_build/libpetbmi",
                                 "forcing_file": "",
-                                "init_config": "/beegfs/projects/hydrofcst/SHARP/sharp_data/inputs/clear_ck/pet/pet_bmi_config.{{id}}.ini",
+                                "init_config": "./inputs/settings/06719505/pet/pet_bmi_config.{{id}}.ini",
                                 "allow_exceed_end_time": true,
                                 "main_output_variable": "water_potential_evaporation_flux",
                                 "registration_function": "register_bmi_pet",
@@ -49,7 +49,7 @@
                                 "model_type_name": "bmi_c_cfe",
                                 "library_file": "/beegfs/projects/hydrofcst/SHARP/models/ngen/extern/cfe/cmake_build/libcfebmi",
                                 "forcing_file": "",
-                                "init_config": "/beegfs/projects/hydrofcst/SHARP/sharp_data/inputs/clear_ck/cfe/cfe_bmi_config.{{id}}.ini",
+                                "init_config": "./inputs/settings/06719505/cfe/cfe_bmi_config.{{id}}.ini",
                                 "allow_exceed_end_time": true,
                                 "main_output_variable": "Q_OUT",
                                 "registration_function": "register_bmi_cfe",
@@ -76,7 +76,7 @@
         ],
         "forcing": {
             "file_pattern": ".*{{id}}.*.csv",
-            "path": "/beegfs/projects/hydrofcst/SHARP/sharp_data/forcings/clear_ck/postproc/all_forc/",
+            "path": "./forcings/06719505/NWM_AnA/",
             "provider": "CsvPerFeature"
         }
     },
@@ -85,5 +85,5 @@
         "end_time": "2024-03-13 16:00:00",
         "output_interval": 3600
     },
-    "output_root": "/beegfs/projects/hydrofcst/SHARP/sharp_data/outputs/clear_ck/cfe//20240313"
+    "output_root": "./outputs/06719505/cfe_AnA_run/"
 }

@@ -13,7 +13,7 @@ The major components included in the repo are the following:
    * an LSTM (in progress)
    * SUMMA (in progress)
  * GIS data: HydroFabric
-   * NextGen HydroFabric data: https://www.lynker-spatial.com/#v20/
+   * NextGen HydroFabric data: https://www.lynker-spatial.com/#v20.1/
    * Subsetting tool: https://github.com/NOAA-OWP/hydrofabric/tree/main
  * Forcings: from the real-time operational NWM Analysis and Assimilation Extended dataset mapped to the Clear Creek hydrofabric
    * NWM operational forcing data: https://noaa-nwm-pds.s3.amazonaws.com/index.html

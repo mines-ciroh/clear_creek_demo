@@ -8,7 +8,7 @@ This single-basin hydrologic modeling application for the Clear Creek at Golden,
 The major components included in the repo are the following:
  * NextGen realization file for:
    * a CFE model
-   * a Noah-OWP-Modular model (in progress)
+   * a Noah-OWP-Modular model
    * t-route implementation (in progress)
    * an LSTM (in progress)
    * SUMMA (in progress)

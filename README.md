@@ -34,7 +34,9 @@ The major components included in the repo are the following:
    * Project: [CSM-CIROH Hydrologic Prediction Testbed Project](https://ciroh.mines.edu/research/) (PI A. Wood)
 
 ## Usage / Collaboration
-We share this watershed example as a resource to assist the NextGen R&D community in implementing NextGen for different applications and studies.  It is unpublished and in-progress work, thus we request that users acknowledge this repo if it is useful in their work -- or better yet, reach out to Andy Wood and Josh Sturtevant to collaborate and contribute.  
+ * We share this watershed example as a resource to assist the NextGen R&D community in implementing NextGen for different applications and studies.
+ * It is _unpublished and in-progress work_, thus we request that users acknowledge this repo if it is useful in their work -- or better yet, reach out to Andy Wood and Josh Sturtevant to collaborate and contribute.
+ * If you wish to add to the repo, please follow this workflow: fork the main repo, then clone your fork for modification, then push changes back to your fork, then make a pull request back to the main repo. Please work on the **develop** branch (or create a new feature branch in your fork).
 
 ## Acknowledgements
 We thank Nicholas Danes and Mike Robbert, Cyberinfrastructure and Advanced Research Computing, Information and Technology Solutions (ITS), CSM, for helping to enable and troubleshoot implementions of this demo and related work on Mines HPC. 

@@ -7,10 +7,10 @@ This single-basin hydrologic modeling application for the Clear Creek at Golden,
 ## Description
 The major components included in the repo are the following:
  * NextGen realization file for:
-   * a CFE model
-   * a Noah-OWP-Modular model
-   * t-route implementation (in progress)
-   * an LSTM (in progress)
+   * a [CFE model](https://github.com/NOAA-OWP/cfe)
+   * a [Noah-OWP-Modular model](https://github.com/NOAA-OWP/noah-owp-modular)
+   * [t-route](https://github.com/NOAA-OWP/t-route) implementation (in progress)
+   * an [LSTM](https://github.com/NOAA-OWP/lstm) (in progress)
    * SUMMA (in progress)
  * GIS data: HydroFabric
    * NextGen HydroFabric data: https://www.lynker-spatial.com/#v20.1/

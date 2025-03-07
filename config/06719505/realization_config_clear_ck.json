@@ -1,0 +1,77 @@
+{
+  "global": {
+    "formulations": [
+      {
+        "name": "bmi_multi",
+        "params": {
+          "model_type_name": "bmi_multi_pet",
+          "forcing_file": "",
+          "init_config": "",
+          "allow_exceed_end_time": true,
+          "main_output_variable": "land_surface_water__runoff_volume_flux",
+          "modules": [
+            {
+              "name": "bmi_c++",
+              "params": {
+                "model_type_name": "bmi_c++_sloth",
+                "library_file": "/home/m10870071/lstm/ngen_python/extern/sloth/cmake_build/libslothmodel.so",
+                "init_config": "/dev/null",
+                "allow_exceed_end_time": true,
+                "main_output_variable": "z",
+                "uses_forcing_file": false,
+                "model_params": {
+                  "sloth_ice_fraction_schaake(1,double,m,node)": 0.0,
+                  "sloth_ice_fraction_xinanjiang(1,double,1,node)": 0.0,
+                  "sloth_soil_moisture_profile(1,double,1,node)": 0.0
+                }
+              }
+            },
+            {
+              "name": "bmi_c",
+              "params": {
+                "model_type_name": "bmi_c_pet",
+                "library_file": "/home/m10870071/lstm/ngen_python/extern/evapotranspiration/cmake_build/libpetbmi",
+                "forcing_file": "",
+                "init_config": "/home/m10870071/hydrofcst/SHARP/inputs/settings/06719505/pet/pet_bmi_config.{{id}}.ini",
+                "allow_exceed_end_time": true,
+                "main_output_variable": "water_potential_evaporation_flux",
+                "registration_function": "register_bmi_pet",
+                "uses_forcing_file": false,
+                "variables_names_map": {
+                  "water_potential_evaporation_flux": "potential_evapotranspiration"
+                }
+              }
+            },
+            {
+              "name": "bmi_python",
+              "params": {
+                "python_type": "lstm.bmi_lstm.bmi_LSTM",
+                "model_type_name": "bmi_LSTM",
+                "init_config": "/home/m10870071/lstm/ngen_python/data/lstm/yml_files/bmi_clear_ck/lstm_bmi_config.{{id}}.yml",
+                "main_output_variable": "land_surface_water__runoff_volume_flux",
+                "uses_forcing_file": false,
+                "allow_exceed_end_time": true,
+                "variables_names_map": {
+                  "streamflow_cms": "land_surface_water__runoff_volume_flux",
+                  "atmosphere_water__liquid_equivalent_precipitation_rate": "APCP_surface",
+                  "land_surface_air__temperature": "TMP_2maboveground"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "forcing": {
+      "file_pattern": ".*{{id}}.*.csv",
+      "path": "/home/m10870071/lstm/ngen_python/data/CLEAR_CREEK/forcings/NWM_AnA/postproc/all_forc/old",
+      "provider": "CsvPerFeature"
+    }
+  },
+  "time": {
+    "start_time": "2024-02-15 13:00:00",
+    "end_time": "2024-04-14 16:00:00",
+    "output_interval": 3600
+  },
+  "output_root": "/home/m10870071/lstm/ngen_python/outputs/2024"
+}

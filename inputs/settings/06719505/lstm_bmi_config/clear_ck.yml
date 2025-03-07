@@ -10,7 +10,7 @@ slope_mean: 45.7 # mean value from CAMELS
 verbose: 0
 
 # CAMELS Trained Model
-# train_cfg_file: /home/m10870071/lstm/ngen_python/extern/lstm_frame/trained_neuralhydrology_models/nh_AORC_hourly_slope_elev_precip_temp_seq999_seed101_2801_191806/config.yml
+# train_cfg_file: ../../../extern/lstm_frame/trained_neuralhydrology_models/nh_AORC_hourly_slope_elev_precip_temp_seq999_seed101_2801_191806/config.yml
 
 # lumped individual clear creek basin
-train_cfg_file: /home/m10870071/lstm/ngen_python/trained_nh_models/clear_creek/lumped_static/config.yml
+train_cfg_file: ../../../trained_nh_models/clear_creek/lumped_static/config.yml

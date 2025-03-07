@@ -1,0 +1,13 @@
+This fork/branch is meant to include the important files for the LSTM NextGen implementation for Clear Creek.
+The important files have been organized similarly to how they are for CFE and NOAH-Modular in the main repository.
+How they are currently setup on Wendian is different, so paths in the files may not be the same as the repo. 
+
+An LSTM in NextGen requires at least 3 different configuration files:
+  - A trained LSTM in "trained_neuralhydrology_models" directory
+  - A BMI configuration file in "inputs/settings/06719505/lstm_bmi_config"
+  - A realization file in "config/06719505"
+
+NextGen runs with the "run_clear_ck_lstm.sh" file, which uses the realization file to determine what parameters to use.
+The realization file calls the BMI config files to pass in specific information about the basin and LSTM. The BMI config
+file points to the trained LSTM config file. The LSTM is then initialized with the parameters in its config file and grabs
+the LSTM weights from the specified directory. 

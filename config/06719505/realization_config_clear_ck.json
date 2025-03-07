@@ -14,7 +14,7 @@
               "name": "bmi_c++",
               "params": {
                 "model_type_name": "bmi_c++_sloth",
-                "library_file": "/home/m10870071/lstm/ngen_python/extern/sloth/cmake_build/libslothmodel.so",
+                "library_file": "./extern/sloth/cmake_build/libslothmodel.so",
                 "init_config": "/dev/null",
                 "allow_exceed_end_time": true,
                 "main_output_variable": "z",
@@ -30,9 +30,9 @@
               "name": "bmi_c",
               "params": {
                 "model_type_name": "bmi_c_pet",
-                "library_file": "/home/m10870071/lstm/ngen_python/extern/evapotranspiration/cmake_build/libpetbmi",
+                "library_file": "./extern/evapotranspiration/cmake_build/libpetbmi",
                 "forcing_file": "",
-                "init_config": "/home/m10870071/hydrofcst/SHARP/inputs/settings/06719505/pet/pet_bmi_config.{{id}}.ini",
+                "init_config": "../../hydrofcst/SHARP/inputs/settings/06719505/pet/pet_bmi_config.{{id}}.ini",
                 "allow_exceed_end_time": true,
                 "main_output_variable": "water_potential_evaporation_flux",
                 "registration_function": "register_bmi_pet",
@@ -47,7 +47,7 @@
               "params": {
                 "python_type": "lstm.bmi_lstm.bmi_LSTM",
                 "model_type_name": "bmi_LSTM",
-                "init_config": "/home/m10870071/lstm/ngen_python/data/lstm/yml_files/bmi_clear_ck/lstm_bmi_config.{{id}}.yml",
+                "init_config": "./data/lstm/yml_files/bmi_clear_ck/lstm_bmi_config.{{id}}.yml",
                 "main_output_variable": "land_surface_water__runoff_volume_flux",
                 "uses_forcing_file": false,
                 "allow_exceed_end_time": true,
@@ -64,7 +64,7 @@
     ],
     "forcing": {
       "file_pattern": ".*{{id}}.*.csv",
-      "path": "/home/m10870071/lstm/ngen_python/data/CLEAR_CREEK/forcings/NWM_AnA/postproc/all_forc/old",
+      "path": "./data/CLEAR_CREEK/forcings/NWM_AnA/postproc/all_forc/old",
       "provider": "CsvPerFeature"
     }
   },
@@ -73,5 +73,5 @@
     "end_time": "2024-04-14 16:00:00",
     "output_interval": 3600
   },
-  "output_root": "/home/m10870071/lstm/ngen_python/outputs/2024"
+  "output_root": "./outputs/2024"
 }

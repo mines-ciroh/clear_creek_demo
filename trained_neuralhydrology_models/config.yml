@@ -1,9 +1,9 @@
 allow_subsequent_nan_losses: 10
-batch_size: 64 # check out for single basin
+batch_size: 96 # check out for single basin
 clip_gradient_norm: 1
 clip_targets_to_zero:
   - Qout
-data_dir: /home/m10870071/lstm/ngen_python/data/CLEAR_CREEK/
+data_dir: ./data/CLEAR_CREEK/
 dataset: generic
 device: cpu
 dynamic_inputs:
@@ -13,7 +13,7 @@ epochs: 15
 experiment_name: clear_creek
 head: regression
 hidden_size: 126
-img_log_dir: /home/m10870071/neuralhydrology/runs/clear_creek/img_log
+img_log_dir: ../neuralhydrology/runs/clear_creek/img_log
 initial_forget_bias: 3
 learning_rate:
   0: 0.001
@@ -33,23 +33,23 @@ output_activation: linear
 output_dropout: 0.4
 package_version: 1.10.0
 predict_last_n: 1
-run_dir: /home/m10870071/lstm/ngen_python/trained_nh_models/clear_creek
+run_dir: ./trained_nh_models/clear_creek
 save_weights_every: 1
 seed: 101
-seq_length: 365
+seq_length: 720
 static_attributes:
   - elev_mean
   - slope_mean
 target_variables:
   - Qout
-test_basin_file: /home/m10870071/lstm/ngen_python/data/CLEAR_CREEK/lumped_basins.txt
+test_basin_file: ./data/CLEAR_CREEK/lumped_basins.txt
 test_end_date: 31/12/2022
 test_start_date: 11/03/2019
-train_basin_file: /home/m10870071/lstm/ngen_python/data/CLEAR_CREEK/lumped_basins.txt
+train_basin_file: ./data/CLEAR_CREEK/lumped_basins.txt
 train_end_date: 31/12/2022
 train_start_date: 01/01/2020
 validate_every: 1
 validate_n_random_basins: 1
-validation_basin_file: /home/m10870071/lstm/ngen_python/data/CLEAR_CREEK/lumped_basins.txt
+validation_basin_file: ./data/CLEAR_CREEK/lumped_basins.txt
 validation_end_date: 30/09/2021
 validation_start_date: 10/01/2020

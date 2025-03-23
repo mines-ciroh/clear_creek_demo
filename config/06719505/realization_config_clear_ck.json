@@ -47,7 +47,7 @@
               "params": {
                 "python_type": "lstm.bmi_lstm.bmi_LSTM",
                 "model_type_name": "bmi_LSTM",
-                "init_config": "./data/lstm/yml_files/bmi_clear_ck/lstm_bmi_config.{{id}}.yml",
+                "init_config": "./inputs/settings/06719505/bmi_clear_ck/lstm_bmi_config.{{id}}.yml",
                 "main_output_variable": "land_surface_water__runoff_volume_flux",
                 "uses_forcing_file": false,
                 "allow_exceed_end_time": true,

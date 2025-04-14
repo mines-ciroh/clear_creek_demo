@@ -8,6 +8,6 @@
 # pip install xarray==0.16.0
 
 ./cmake_build/ngen \
-        ../../hydrofcst/SHARP/inputs/hydrofabric/06719505/clear_ck.v201.catchment_data.geojson all \
-        ../../hydrofcst/SHARP/inputs/hydrofabric/06719505/clear_ck.v201.nexus_data.geojson all  \
+        ../../hydrofabric/06719505/clear_ck.ngen_hf.v2_2.gpkg "all" \
+        ../../hydrofabric/06719505/clear_ck.ngen_hf.v2_2.gpkg "all" \
         ./data/lstm/rc_files/realization_config_clear_ck.json

@@ -8,7 +8,7 @@
           "forcing_file": "",
           "init_config": "",
           "allow_exceed_end_time": true,
-          "main_output_variable": "land_surface_water__runoff_volume_flux",
+          "main_output_variable": "land_surface_water__depth",
           "modules": [
             {
               "name": "bmi_c++",
@@ -47,14 +47,19 @@
               "params": {
                 "python_type": "lstm.bmi_lstm.bmi_LSTM",
                 "model_type_name": "bmi_LSTM",
-                "init_config": "./inputs/settings/06719505/bmi_clear_ck/lstm_bmi_config.{{id}}.yml",
-                "main_output_variable": "land_surface_water__runoff_volume_flux",
+                "init_config": "./inputs/settings/06719505/lstm_bmi_config/bmi_config_cc.yml",
+                "main_output_variable": "land_surface_water__depth",
                 "uses_forcing_file": false,
                 "allow_exceed_end_time": true,
                 "variables_names_map": {
-                  "streamflow_cms": "land_surface_water__runoff_volume_flux",
                   "atmosphere_water__liquid_equivalent_precipitation_rate": "APCP_surface",
-                  "land_surface_air__temperature": "TMP_2maboveground"
+                  "land_surface_air__temperature": "TMP_2maboveground",
+                  "water_potential_evaporation_flux": "water_potential_evaporation_flux",
+                  "atmosphere_air_water~vapor__relative_saturation": "SPFH_2maboveground",
+                  "land_surface_wind__x_component_of_velocity": "UGRD_10maboveground",
+                  "land_surface_wind__y_component_of_velocity": "VGRD_10maboveground",
+                  "land_surface_radiation~incoming~longwave__energy_flux": "DLWRF_surface",
+                  "land_surface_radiation~incoming~shortwave__energy_flux": "DSWRF_surface"
                 }
               }
             }
@@ -73,5 +78,8 @@
     "end_time": "2024-04-14 16:00:00",
     "output_interval": 3600
   },
-  "output_root": "./outputs/2024"
+  "output_root": "./outputs/lstm",
+  "routing": {
+    "t_route_config_file_with_path": "./data/lstm/routing/ngen_troute_lstm.cc.yaml"
+  }
 }

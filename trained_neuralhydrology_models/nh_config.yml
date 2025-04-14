@@ -1,0 +1,70 @@
+# model run information
+experiment_name: clear_creek
+dataset: generic
+model: cudalstm
+package_version: 1.10.0
+number_of_basins: 2
+device: cpu
+
+# hyperparameters
+optimizer: Adam
+output_activation: linear
+epochs: 10
+head: regression
+allow_subsequent_nan_losses: 10
+batch_size: 128
+clip_gradient_norm: 1
+hidden_size: 126
+initial_forget_bias: 3
+learning_rate:
+  0: 0.001
+  4: 0.0008
+  7: 0.0005
+log_interval: 5
+log_n_figures: 1
+log_tensorboard: false
+loss: NSE
+metrics:
+  - NSE
+  - KGE
+output_dropout: 0.2
+predict_last_n: 1
+save_weights_every: 1
+seed: 101
+seq_length: 365
+
+# directories
+run_dir: ./trained_nh_models/clear_creek
+data_dir: ./data/CLEAR_CREEK/
+
+# inputs
+dynamic_inputs:
+  - APCP_surface
+  - TMP_2maboveground
+  - UGRD_10maboveground
+  - VGRD_10maboveground
+  - SPFH_2maboveground
+  - DLWRF_surface
+  - DSWRF_surface
+static_attributes:
+  - elev_mean
+  - slope_mean
+target_variables:
+  - Qout
+
+# train information
+train_basin_file: ./data/CLEAR_CREEK/lumped_basins.txt
+train_start_date: 11/03/2019
+train_end_date: 31/12/2021
+
+# test information
+test_basin_file: ./data/CLEAR_CREEK/lumped_basins.txt
+test_start_date: 01/10/2021
+test_end_date: 31/12/2022
+
+# validation information
+validate_every: 1
+validate_n_random_basins: 1
+validation_basin_file: ./data/CLEAR_CREEK/lumped_basins.txt
+validation_start_date: 01/01/2022
+validation_end_date: 30/09/2022

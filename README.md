@@ -12,12 +12,13 @@ The major components included in the repo are the following:
    * [t-route](https://github.com/NOAA-OWP/t-route) implementation (in progress)
    * an [LSTM](https://github.com/NOAA-OWP/lstm) (in progress)
    * SUMMA (in progress)
- * GIS data: HydroFabric
-   * NextGen HydroFabric data: https://www.lynker-spatial.com/#v20.1/
-   * Subsetting tool: https://github.com/NOAA-OWP/hydrofabric/tree/main
- * Forcings: from the real-time operational NWM Analysis and Assimilation Extended dataset mapped to the Clear Creek hydrofabric
-   * NWM operational forcing data: https://noaa-nwm-pds.s3.amazonaws.com/index.html
-   * NWM to NextGen forcing processor tool: https://github.com/CIROH-UA/ngen-datastream/tree/main/forcingprocessor
+ * GIS data: Hydrofabric
+   * Clear Creek NextGen v2.2 Hydrofabric data: [Mines Clear Creek HydroShare resource](https://www.hydroshare.org/resource/16f2de7e9de94148b868e9be795956bb/)
+   * Subsetting tools: [https://github.com/mines-ciroh/subset_ngen_hf](https://github.com/mines-ciroh/subset_ngen_hf)
+ * Forcings:
+   * 1979-2024 AORCv1.1 mapped to Clear Creek hydrofabric: [Mines Clear Creek HydroShare resource](https://www.hydroshare.org/resource/16f2de7e9de94148b868e9be795956bb/)
+   * Real-time NWM Analysis and Assimilation Extended dataset: https://noaa-nwm-pds.s3.amazonaws.com/index.html
+   * NWM to NextGen forcing processor tool (used to map real-time AnA products to Clear Creek hydrofabric): https://github.com/CIROH-UA/ngen-datastream/tree/main/forcingprocessor
  * Initialization files
  * Streamflow observations
 

@@ -1,0 +1,65 @@
+# model run information
+experiment_name: camels_aorc
+dataset: generic
+model: cudalstm
+package_version: 1.12.0
+number_of_basins: 490 #517
+device: cuda:0
+
+# hyperparameters
+optimizer: Adam
+output_activation: linear
+epochs: 10 # increase at some point?
+head: regression
+allow_subsequent_nan_losses: 10
+batch_size: 128
+clip_gradient_norm: 1.0
+hidden_size: 64
+initial_forget_bias: 3
+learning_rate:
+  0: 0.0001
+  4: 0.0008
+  8: 0.0005
+log_interval: 5
+log_n_figures: 1
+log_tensorboard: false
+loss: MSE
+metrics:
+  - NSE
+  - KGE
+output_dropout: 0.3
+predict_last_n: 1
+save_weights_every: 1
+seed: 101
+seq_length: 720 # for now
+
+# directories
+run_dir: ./camels/
+data_dir: ../aorc/camels-gII/camels-gII_basin/
+
+# inputs
+dynamic_inputs:
+  - APCP_surface
+  - TMP_2maboveground
+static_attributes:
+  - elev_mean
+  - slope_mean
+target_variables:
+  - qobs_mm_per_hour
+
+# train information
+train_basin_file: ../aorc/camels-gII/camels-gII_basin/camels_ids.txt
+train_start_date: 01/01/1996 # earliest date all files have
+train_end_date: 31/12/2012
+
+# test information
+test_basin_file: ../aorc/camels-gII/camels-gII_basin/camels_ids.txt
+test_start_date: 01/10/2014
+test_end_date: 31/12/2016 # latest date all files have
+
+# validation information
+validate_every: 1
+validate_n_random_basins: 1
+validation_basin_file: ../aorc/camels-gII/camels-gII_basin/camels_ids.txt
+validation_start_date: 01/01/2013
+validation_end_date: 30/09/2014

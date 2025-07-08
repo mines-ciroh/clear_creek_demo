@@ -1,14 +1,15 @@
 time_step: "1 hour"
 initial_state: "zero"
 basin_name: "Clear Creek at Golden, CO"
-basin_id: "06719505"
-area_sqkm: 1020.46
-lat: 39.75304299
-lon: -105.2352667
-elev_mean: 333.33
-slope_mean: 45.7
+basin_id: "BASIN_ID"
+area_sqkm: AREA_SQKM
+# lat: 39.75304299
+# lon: -105.2352667
+elev_mean: 715.5 #ELEV_MEAN
+slope_mean: 45.6 #SLOPE_MEAN
 verbose: 0
 
-# lumped individual clear creek basin
-# trained on Qout
-train_cfg_file: ../../../trained_neuralhydrology_models/nh_config.yml
+# LUMPED-CAMELS
+train_cfg_file: ../../../trained_nh_models/camels/camels_aorc_19/config.yml
+# LUMPED-CC
+# train_cfg_file: ../../../trained_nh_models/clear_creek/lumped_clear_creek/config.yml
